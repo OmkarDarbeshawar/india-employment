@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make India Employment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .donate-section, .contact-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .donate-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .donate-buttons button:hover {
+      background-color: #45a049;
+    }
+    .qr-code {
+      margin-top: 20px;
+    }
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    .contact-details {
+      margin-top: 20px;
+    }
+    .contact-details p {
+      margin: 5px 0;
+    }
+    iframe {
+      margin-top: 20px;
+      border: none;
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+  <script>
+    function updateQRCode(amount) {
+      const qr = document.getElementById('qr-img');
+      const upiLink = `upi://pay?pa=omkar.darbeshawar@axl&pn=Make+India+Employment&am=${amount}&cu=INR`;
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiLink)}`;
+      qr.src = qrUrl;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Make India Employment</h1>
+    <p>Creating Opportunities, Building Futures</p>
+  </header>
+  <div class="container">
+    <h2>About Us</h2>
+    <p>
+      Make India Employment is a non-profit initiative dedicated to addressing unemployment through skills training,
+      entrepreneurship support, and job placement programs across India. Join us in creating a self-reliant workforce.
+    </p>
+
+    <div class="donate-section">
+      <h2>Support Our Cause</h2>
+      <p>Select an amount to donate:</p>
+      <div class="donate-buttons">
+        <button onclick="updateQRCode(100)">₹100</button>
+        <button onclick="updateQRCode(500)">₹500</button>
+        <button onclick="updateQRCode(1000)">₹1000</button>
+      </div>
+      <p>Scan the QR code below to donate:</p>
+      <div class="qr-code">
+        <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=omkar.darbeshawar@axl&pn=Make+India+Employment&cu=INR" alt="Donate QR Code">
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h2>Contact Us / Volunteer</h2>
+      <div class="contact-details">
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Email:</strong> makeindia.employment@example.com</p>
+      </div>
+      <p>Please fill the form below if you wish to volunteer with us:</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYURL/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Make India Employment. All rights reserved.</p>
+  </footer>
+</body>
+</html>
